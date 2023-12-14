@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface DeputadoEventosProjection {
     List<Evento> getEventos();
+    Seringa getNomeCivil();
 }
