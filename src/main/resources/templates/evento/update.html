@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalho LP3 (Cãmara dos deputados) - Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/update-evento-style.css">
+</head>
+<body>
+<div class="container">
+    <div th:replace="components/header :: header"></div>
+    <main class="main">
+        <section class="section-form-evento">
+            <form class="form-evento" th:object="${evento}" 
+            th:method="put" th:action="@{/eventos/{id}/update (id=${evento.id})}">
+                <input type="hidden" value="${evento.id}" th:field="*{id}">
+                <fieldset class="fields">
+                    <div class="input-container">
+                        <label for="nome">Nome</label>
+                        <input type="text" value="${evento.nome}" 
+                        th:field="*{nome}">
+                    </div>
+                    <div class="input-container">
+                        <label for="nome">Data hora início</label>
+                        <input type="datetime-local" value="${evento.dataHoraInicio}" 
+                        th:field="*{dataHoraInicio}">
+                    </div>
+                    <div class="input-container">
+                        <label for="nome">Data hora fim</label>
+                        <input type="datetime-local" value="${evento.dataHoraFim}" 
+                        th:field="*{dataHoraFim}">
+                    </div>
+                </fieldset>
+                <button id="btn-update-evento" class="button" type="submit">Atualizar evento</button>
+            </form>
+        </section>
+    </main>
+    <div th:replace="components/footer :: footer"></div>
+</div>
+</body>
+</html>

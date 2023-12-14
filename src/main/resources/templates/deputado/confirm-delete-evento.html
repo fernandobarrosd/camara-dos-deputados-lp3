@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalho LP3 (Cãmara dos deputados) - Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/confirm-delete-evento-style.css">
+</head>
+<body>
+<div class="container">
+    <div th:replace="components/header :: header"></div>
+    <main class="main">
+        <section class="section-confirm-delete-evento">
+            <span>Deseja deletar o evento</span>
+            <span th:text="${evento.nome}"></span>
+            <form th:action="@{/deputados/{deputadoID}/eventos/{eventoID}/delete(deputadoID=${evento.deputadoID},eventoID=${evento.id})}" 
+            th:method="delete" th:object="${evento}">
+               
+                <input type="hidden" value="${evento.id}" th:field="*{id}">
+                <input type="hidden" value="${evento.deputadoID}" th:field="*{deputadoID}">
+                <button class="button" type="submit">Excluir evento</button>
+            </form>
+        </section>
+    </main>
+    <div th:replace="components/footer :: footer"></div>
+</div>
+</body>
+</html>

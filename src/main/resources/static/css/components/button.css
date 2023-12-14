@@ -1,0 +1,12 @@
+.button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.3rem;
+    border-radius: 0.6rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a.button {
+    padding: 0.6rem;
+}

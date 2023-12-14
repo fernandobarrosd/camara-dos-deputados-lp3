@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalho LP3 (Cãmara dos deputados) - Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/info-style.css">
+</head>
+<body>
+<div class="container">
+    <div th:replace="components/header :: header"></div>
+    <main class="main">
+        <section class="section-deputado">
+            <div class="deputado-info">
+                <h2 class="title" th:text="${deputado.nomeCivil}"></h2>
+                <span th:text="${'Sigla do partido: ' + deputado.siglaPartido}"
+                      class="text"></span>
+
+                <span th:text="${'Sigla da UF: ' + deputado.siglaUF}"
+                      class="text"></span>
+                <div class="links">
+                    <a class="button" th:href="@{/deputados/{id}/eventos (id=${deputado.id})}">Ver eventos</a>
+                    <a class="button" th:href="@{/deputados/{id}/eventos/new (id=${deputado.id})}">Cadastrar evento</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <div th:replace="components/footer :: footer"></div>
+</div>
+</body>
+</html>

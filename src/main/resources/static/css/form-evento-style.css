@@ -1,0 +1,29 @@
+@import "./components/select.css";
+@import "./components/fields.css";
+@import "./components/button.css";
+
+.section-form-evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(222, 220, 217);
+    padding: 50px 20px;
+    width: 500px;
+
+}
+
+.form-evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.fields select {
+    margin-top: 20px;
+}
+
+.form-evento #btn-cadastrar-evento {
+    margin-top: 50px;
+    width: 50%;
+}

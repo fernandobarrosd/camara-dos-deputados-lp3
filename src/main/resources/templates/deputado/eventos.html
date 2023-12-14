@@ -1,0 +1,44 @@
+<!DOCTYPE html >
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalho LP3 (Cãmara dos deputados) - Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/eventos-style.css">
+</head>
+<body>
+<div class="container">
+    <div th:replace="components/header :: header"></div>
+    <main class="main">
+        <section class="section-eventos">
+            <ul class="eventos-list">
+                <li th:each="evento : ${eventos}" class="evento-card">
+                    <span th:text="${evento.nome}" class="title"></span>
+                    <div class="date-container">
+                        <span class="text">Data hora início</span>
+                        <span class="text" th:text="${evento.dataHoraInicio}"></span>
+                    </div>
+                    <div class="date-container">
+                        <span class="text">Data hora fim</span>
+                        <span class="text" th:if="${evento.dataHoraFim != null}" th:text="${evento.dataHoraFim}"></span>
+                    </div>
+                    
+                    <div class="links">
+                        <a th:href="@{/deputados/{deputadoID}/eventos/{eventoID}/delete (deputadoID=${evento.deputadoID},eventoID=${evento.id})}" 
+                        class="button">Excluir</a>
+
+                        <a th:href="@{/eventos/{id}/update (id=${evento.id})}" 
+                        class="button">Atualizar</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <div th:replace="components/footer :: footer"></div>
+</div>
+</body>
+</html>

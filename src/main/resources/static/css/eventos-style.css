@@ -1,0 +1,42 @@
+@import "./components/button.css";
+
+.eventos-list {
+    display: flex;
+    width: 100vw;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    margin: 20px 0;
+}
+
+.evento-card {
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 235, 230);
+    padding: 15px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.title {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.text {
+    font-size: 0.8rem;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.button {
+    font-size: 0.8rem;
+}

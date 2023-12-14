@@ -1,0 +1,48 @@
+
+
+.section-deputados {
+    display: flex;
+    justify-content: center;
+
+}
+
+.deputado-cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 20px 0;
+}
+
+.deputado-card {
+   width: 250px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   border: 3px solid var(--primary-color);
+   padding: 0.6rem;
+   background-color: rgb(238, 235, 230);
+}
+
+.deputado-card .text {
+    font-size: 0.8rem;
+    
+    text-align: center;
+}
+
+.deputado-card .title {
+    font-size: 0.7rem;
+    text-align: center;
+    width: 200px;
+}
+
+
+.deputado-card .link {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.6rem;
+    border-radius: 0.6rem;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalho LP3 (Cãmara dos deputados) - Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/form-evento-style.css">
+</head>
+<body>
+<div class="container">
+    <div th:replace="components/header :: header"></div>
+    <main class="main">
+        <section class="section-form-evento">
+            <h2 class="title" th:text="${deputado.nome}"></h2>
+            <form class="form-evento" method="POST" th:object="${deputadoAdicionarEvento}" th:action="@{/deputados/{id}/eventos(id=${deputado.id})}">
+                <fieldset class="fields">
+                    <select class="select" th:field="*{eventoID}">
+                        <option th:value="${evento.id}" 
+                        th:each="evento : ${eventos}" 
+                        th:text="${evento.nome}">
+                        </option>
+                    </select>
+                </fieldset>
+                <button id="btn-cadastrar-evento" class="button" type="submit">Cadastrar evento</button>
+            </form>
+        </section>
+    </main>
+    <div th:replace="components/footer :: footer"></div>
+</div>
+</body>
+</html>

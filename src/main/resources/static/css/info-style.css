@@ -1,0 +1,43 @@
+@import "./components/button.css";
+
+.section-deputado {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.deputado-info {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   padding: 0.6rem;
+}
+
+.deputado-info .text {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.deputado-info .title {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+.deputado-info .link {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.6rem;
+    border-radius: 0.6rem;
+    font-weight: bold;
+}
+
+.deputado-info .links {
+    display: flex;
+    gap: 1.3rem;
+    margin-top: 2rem;
+}
