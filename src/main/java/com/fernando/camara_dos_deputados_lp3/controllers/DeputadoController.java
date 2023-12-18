@@ -40,7 +40,9 @@ public class DeputadoController {
     public ModelAndView eventos(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView("deputado/eventos");
         List<EventoInfoDTO> eventos = deputadoService.findEventos(id);
+        Deputado deputado = deputadoService.findByID(id);
         modelAndView.addObject("eventos", eventos);
+        modelAndView.addObject("deputado", deputado);
 
         return modelAndView;
     }
@@ -75,8 +77,11 @@ public class DeputadoController {
         @PathVariable Long eventoID) {
         ModelAndView modelAndView = new ModelAndView("deputado/confirm-delete-evento");
         EventoInfoDTO evento = deputadoService.findEventoById(deputadoID, eventoID);
-
+        Deputado deputado = deputadoService.findByID(deputadoID);
+       
+        
         modelAndView.addObject("evento", evento);
+        modelAndView.addObject("deputado", deputado);
 
         return modelAndView;
     }

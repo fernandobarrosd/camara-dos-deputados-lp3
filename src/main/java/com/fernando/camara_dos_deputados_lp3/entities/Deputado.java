@@ -25,8 +25,7 @@ public class Deputado {
     @Column(nullable = false, name = "sigla_uf")
     private String siglaUF;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Evento> eventos;
 
     public Deputado() {
